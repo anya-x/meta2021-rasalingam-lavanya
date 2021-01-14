@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #accessing }
+Counter class >> startingAt: anInteger [
+	^self new count: anInteger
+]
+
+{ #category : #accessing }
 Counter >> count [ 
 	^ count
 ]
@@ -31,4 +36,10 @@ Counter >> increment [
 	"scope: class-variables  &  instance-variables"	
 			
 	count:= count + 1
+]
+
+{ #category : #initialization }
+Counter >> initialize [
+	super initialize.
+	count:=0
 ]
